@@ -165,6 +165,9 @@ function App() {
               <a className="secondary-button" href="/Shibji_Rout.pdf" target="_blank" rel="noreferrer">
                 <FileText size={18} /> Resume
               </a>
+              <a className="nav-button" href="https://github.com/ShibjiRout" target="_blank" rel="noreferrer">
+              <Github size={18} /> GitHub
+              </a>
             </motion.div>
           </div>
 
