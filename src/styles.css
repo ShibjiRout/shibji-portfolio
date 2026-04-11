@@ -196,10 +196,19 @@ button {
   color: #f8fafc;
 }
 
+/* This is your base style (for Phone) */
 .hero h1 {
-  font-size: clamp(4rem, 6vw, 5.5rem);
-  line-height: 1.;
-  max-width: 12ch;
+  font-size: clamp(2.5rem, 8vw, 4rem); 
+  line-height: 1.02;
+  max-width: 12ch; 
+}
+
+/* This applies ONLY to Laptop/Desktop */
+@media (min-width: 1024px) {
+  .hero h1 {
+    font-size: clamp(4rem, 6vw, 3.4rem);
+    max-width: 28ch; 
+  }
 }
 
 .hero-text {
