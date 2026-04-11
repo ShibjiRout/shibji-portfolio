@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Brain, Cloud, Code2, Database, ExternalLink, Github, Layers3, Menu, X } from 'lucide-react'
+import { ArrowRight, Brain, Cloud, Code2, Database, ExternalLink, FileText, Github, Layers3, Linkedin, Mail, Menu, X } from 'lucide-react'
 import { useMemo, useState } from 'react'
 
 type SkillGroup = {
@@ -17,45 +17,52 @@ type Project = {
 
 const skillGroups: SkillGroup[] = [
   {
-    title: 'AI Engineering',
+    title: 'AI & Agentic Systems',
     icon: <Brain size={20} />,
-    items: ['LLM Applications', 'RAG Pipelines', 'Prompt Engineering', 'AI System Development'],
+    items: ['LangChain', 'LangGraph', 'RAG Systems', 'MCP (Brave/Gmail)', 'Prompt Engineering', 'Agentic Workflows'],
   },
   {
-    title: 'ML & Data',
+    title: 'ML & Data Science',
     icon: <Layers3 size={20} />,
-    items: ['Machine Learning', 'Data Analysis', 'Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib'],
+    items: ['PyTorch', 'Scikit-Learn', 'XGBoost', 'CatBoost', 'Pandas', 'NumPy'],
   },
   {
     title: 'Retrieval & Memory',
     icon: <Database size={20} />,
-    items: ['Vector Databases', 'Semantic Search', 'Graph Memory', 'Memory-Based Workflows'],
+    items: ['ChromaDB', 'Milvus', 'Graph Memory', 'PostgreSQL', 'Neo4j', 'Semantic Search'],
   },
   {
-    title: 'Frameworks & Backend',
+    title: 'Backend & Frameworks',
     icon: <Code2 size={20} />,
-    items: ['LangChain', 'LangGraph', 'FastAPI', 'Flask', 'REST API Development'],
+    items: ['FastAPI', 'Flask', 'Python (Asyncio)', 'SQL', 'REST APIs', 'Node.js'],
   },
   {
     title: 'Cloud & Deployment',
     icon: <Cloud size={20} />,
-    items: ['Azure Web Apps', 'Azure Container Registry', 'Docker', 'CI/CD Pipelines', 'GitHub Actions'],
+    items: ['Azure (ACR/Web App)', 'Docker', 'GitHub Actions (CI/CD)', 'HTML/CSS', 'System Design'],
   },
 ]
 
 const projects: Project[] = [
   {
+    title: 'CitySignal (Ongoing)',
+    description:
+      'A stateful multi-agent system monitoring UK insider trading filings. Uses LangGraph for signal scoring and MCPs for news enrichment and autonomous alerting.',
+    tag: 'Agentic AI • LangGraph',
+    link: '#', // Replace with actual link
+  },
+  {
     title: 'DocLense Finance',
     description:
-      'A production-style RAG application for financial document querying, built for practical retrieval, clean UX, and cloud deployment.',
-    tag: 'RAG + Azure',
+      'A production RAG system for financial document querying with semantic search, achieving a 45% improvement in retrieval accuracy.',
+    tag: 'RAG • Azure • LangChain',
     link: 'https://doclensefinance.azurewebsites.net/',
   },
   {
     title: 'Student Performance Predictor',
     description:
-      'An ML-powered web app that predicts student outcomes using structured academic and socioeconomic inputs.',
-    tag: 'ML + Deployment',
+      'ML-powered application predicting exam scores using 9 regression models (88.06% R2). Deployed via Docker and CI/CD with 70% reduced latency.',
+    tag: 'ML • Docker • Azure',
     link: 'https://shibji-student-per.azurewebsites.net/',
   },
 ]
@@ -71,9 +78,10 @@ function App() {
 
   const heroStats = useMemo(
     () => [
-      { label: 'Focus', value: 'AI + ML' },
-      { label: 'Deployment', value: 'Azure' },
-      { label: 'Style', value: 'Production-ready' },
+      { label: 'Latency Reduction', value: '70%' },
+      { label: 'Retrieval Accuracy', value: '+45%' },
+      { label: 'System Uptime', value: '99.9%' },
+      { label: 'SLA Maintained', value: '97%' },
     ],
     [],
   )
@@ -86,7 +94,7 @@ function App() {
       <header className="topbar">
         <a className="brand" href="#home">
           <span className="brand-badge">SR</span>
-          <span>Shibji Rout</span>
+          <span>Shibji Shekhar Rout</span>
         </a>
 
         <nav className="nav-desktop">
@@ -97,6 +105,9 @@ function App() {
           ))}
           <a className="nav-button" href="https://github.com/ShibjiRout" target="_blank" rel="noreferrer">
             GitHub
+          </a>
+          <a className="nav-button" href="https://www.linkedin.com/in/shibji-shekhar-rout" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <Linkedin size={20} />
           </a>
         </nav>
 
@@ -120,6 +131,9 @@ function App() {
           <a href="https://github.com/ShibjiRout" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>
             GitHub
           </a>
+          <a href="https://www.linkedin.com/in/shibji-shekhar-rout" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>
+            LinkedIn
+          </a>
         </motion.div>
       )}
 
@@ -127,10 +141,10 @@ function App() {
         <section className="hero section" id="home">
           <div className="hero-copy">
             <motion.p className="eyebrow" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              AI Engineer • ML • RAG • Azure
+              AI Engineer • Agentic Systems
             </motion.p>
             <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08 }}>
-              Building intelligent products with modern AI and scalable engineering.
+              Architecting Stateful Multi-Agent Systems & Advanced RAG with Long-Term Memory.
             </motion.h1>
             <motion.p
               className="hero-text"
@@ -138,15 +152,18 @@ function App() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.16 }}
             >
-              I’m Shibji Rout, focused on machine learning, LLM workflows, retrieval systems, and deployment-ready
-              applications that solve practical problems.
+              I’m Shibji Shekhar Rout, an AI Engineer specializing in LangGraph, RAG pipelines, and ML production systems. 
+              I focus on delivering intelligence that is fast, secure, and production-ready.
             </motion.p>
             <motion.div className="hero-actions" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.24 }}>
               <a className="primary-button" href="#projects">
                 Explore Projects <ArrowRight size={18} />
               </a>
-              <a className="secondary-button" href="https://github.com/ShibjiRout" target="_blank" rel="noreferrer">
-                <Github size={18} /> View GitHub
+              <a className="secondary-button" href="mailto:mrshibji@gmail.com">
+                <Mail size={18} /> Email
+              </a>
+              <a className="secondary-button" href="/Shibji_Rout.pdf" target="_blank" rel="noreferrer">
+                <FileText size={18} /> Resume
               </a>
             </motion.div>
           </div>
@@ -154,10 +171,10 @@ function App() {
           <motion.aside className="hero-card" initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 }}>
             <div className="hero-card-top">
               <span className="live-dot" />
-              <span>Portfolio Snapshot</span>
+              <span>Performance Metrics</span>
             </div>
             <div className="hero-card-body">
-              <p>Focused on practical AI systems, clean backend design, and cloud deployment workflows.</p>
+              <p>Specializing in building and deploying end-to-end agentic AI systems.</p>
               <div className="stat-grid">
                 {heroStats.map((stat) => (
                   <div key={stat.label} className="stat-card">
@@ -173,22 +190,22 @@ function App() {
         <section className="section" id="about">
           <div className="section-heading">
             <p className="eyebrow">About</p>
-            <h2>A builder of AI-first applications</h2>
+            <h2>Proven expertise in high-impact AI</h2>
           </div>
           <div className="about-grid">
             <div className="glass-card">
               <h3>What I do</h3>
               <p>
-                I work on applied AI projects across machine learning, retrieval-augmented generation, API development,
-                and deployment. I enjoy turning complex ideas into polished, usable products.
+                I specialize in building retrieval-augmented generation (RAG) and autonomous multi-agent systems. 
+                With a background in managing 1M+ financial records, I focus on system reliability and low-latency performance. [cite: 5, 7, 40]
               </p>
             </div>
             <div className="glass-card emphasis-card">
-              <h3>Core strengths</h3>
+              <h3>Professional Summary</h3>
               <ul>
-                <li>Production-minded AI application design</li>
-                <li>Backend systems with clean cloud deployment</li>
-                <li>Practical ML and retrieval workflows</li>
+                <li>MSc in Advanced Computer Science (Merit) from University of Leeds </li>
+                <li>Ex-Accenture Analyst managing high-consequence financial modules </li>
+                <li>Expertise in Azure-based cloud deployment and CI/CD workflows </li>
               </ul>
             </div>
           </div>
@@ -197,7 +214,7 @@ function App() {
         <section className="section" id="skills">
           <div className="section-heading">
             <p className="eyebrow">Skills</p>
-            <h2>Tools and technologies I work with</h2>
+            <h2>Technical Stack</h2>
           </div>
           <div className="skill-grid">
             {skillGroups.map((group, index) => (
@@ -228,7 +245,7 @@ function App() {
         <section className="section" id="projects">
           <div className="section-heading">
             <p className="eyebrow">Projects</p>
-            <h2>Selected work</h2>
+            <h2>Selected AI/ML Work</h2>
           </div>
           <div className="project-grid">
             {projects.map((project, index) => (
@@ -249,7 +266,7 @@ function App() {
                 </div>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
-                <span className="project-link">Open project</span>
+                <span className="project-link">View Details</span>
               </motion.a>
             ))}
           </div>
