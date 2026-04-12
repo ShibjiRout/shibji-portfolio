@@ -45,11 +45,11 @@ const skillGroups: SkillGroup[] = [
 
 const projects: Project[] = [
   {
-    title: 'CitySignal (Ongoing)',
+    title: 'Insider Edge',
     description:
       'A stateful multi-agent system monitoring UK insider trading filings. Uses LangGraph for signal scoring and MCPs for news enrichment and autonomous alerting.',
     tag: 'Agentic AI • LangGraph',
-    link: '#', // Replace with actual link
+    link: 'https://github.com/ShibjiRout/InsiderEdge_Langraph_MPC'
   },
   {
     title: 'DocLense Finance',
