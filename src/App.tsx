@@ -200,7 +200,7 @@ function App() {
               <h3>What I do</h3>
               <p>
                 I specialize in building retrieval-augmented generation (RAG) and autonomous multi-agent systems. 
-                With a background in managing 1M+ financial records, I focus on system reliability and low-latency performance. [cite: 5, 7, 40]
+                With a background in managing 1M+ financial records, I focus on system reliability and low-latency performance.
               </p>
             </div>
             <div className="glass-card emphasis-card">
