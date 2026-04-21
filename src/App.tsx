@@ -45,24 +45,24 @@ const skillGroups: SkillGroup[] = [
 
 const projects: Project[] = [
   {
-    title: 'Insider Edge',
+    title: 'Brand Guardian AI',
     description:
-      'A stateful multi-agent system monitoring UK insider trading filings. Uses LangGraph for signal scoring and MCPs for news enrichment and autonomous alerting.',
-    tag: 'Agentic AI • LangGraph',
-    link: 'https://github.com/ShibjiRout/InsiderEdge_Langraph_MPC'
+      'Multi-modal YouTube ad compliance auditing engine. Uses LangGraph to orchestrate Azure Video Indexer (OCR + speech-to-text), RAG retrieval from Azure AI Search, and GPT-4o auditing against real FTC disclosure rules — reducing review time by ~80% (60+ mins to under 10 mins). Returns structured JSON violation reports with category and severity.',
+    tag: 'Agentic AI • LangGraph • Azure • GPT-4o',
+    link: 'https://brandgurdian.azurewebsites.net',
   },
   {
     title: 'DocLense Finance',
     description:
-      'A production RAG system for financial document querying with semantic search, achieving a 45% improvement in retrieval accuracy.',
-    tag: 'RAG • Azure • LangChain',
+      'Production RAG system for financial document Q&A using LangChain and ChromaDB. Enforces finance-domain restriction via a 6-step chain-of-thought reasoning pipeline. Async PDF ingestion with Case ID isolation prevents cross-client data contamination. Deployed via Docker to Azure Container Registry with automated CI/CD via GitHub Actions.',
+    tag: 'RAG • LangChain • Azure • Docker',
     link: 'https://doclensefinance.azurewebsites.net/',
   },
   {
     title: 'Student Performance Predictor',
     description:
-      'ML-powered application predicting exam scores using 9 regression models (88.06% R2). Deployed via Docker and CI/CD with 70% reduced latency.',
-    tag: 'ML • Docker • Azure',
+      'End-to-end ML pipeline comparing 9 regression models via GridSearchCV across 1,000 student records. Selected Ridge Regression with 88.06% R², exposing Decision Tree overfitting (99.97% train vs 75.72% test). Modular pipeline with ingestion, transformation, and trainer components deployed via Docker and CI/CD to Azure.',
+    tag: 'ML • Scikit-Learn • Docker • Azure',
     link: 'https://shibji-student-per.azurewebsites.net/',
   },
 ]
