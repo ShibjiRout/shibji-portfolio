@@ -13,7 +13,7 @@ const projects = [
     desc: 'Multi-modal YouTube ad compliance engine using LangGraph, Azure Video Indexer, and GPT-4o. Cuts review time by ~80%.',
     tags: ['LangGraph', 'Azure', 'GPT-4o'],
     color: '#0d1117',
-    accent: '#10b981',
+    accent: '#2563eb',
     link: 'https://brandgurdian.azurewebsites.net',
   },
   {
@@ -23,8 +23,8 @@ const projects = [
     year: '2024',
     desc: 'PDF-native Q&A with adaptive GPT-4o escalation, Qdrant vector retrieval, and MongoDB conversation history on Azure Container Apps.',
     tags: ['RAG', 'Qdrant', 'Azure'],
-    color: '#f0fdf4',
-    accent: '#059669',
+    color: '#eff6ff',
+    accent: '#1d4ed8',
     link: 'https://doclense-server.victoriousisland-1f528db7.polandcentral.azurecontainerapps.io',
   },
   {
