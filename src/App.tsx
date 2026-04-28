@@ -187,7 +187,7 @@ export default function App() {
               <li>Built and deployed production <strong>LangGraph pipelines and RAG systems on Azure</strong> achieving a <strong>98% pipeline success rate</strong> — combining 3 years of enterprise delivery with an MSc in Advanced Computer Science (Leeds, Merit).</li>
               <li>Architected <strong>multi-agent AI systems</strong> using LangGraph, LangChain, and GPT-4o — including a multi-modal compliance engine (Brand Guardian AI) that reduced review time by <strong>~80%</strong> using Azure Video Indexer and RAG retrieval.</li>
               <li>Designed and deployed <strong>production RAG platforms</strong> with Qdrant vector search, adaptive model escalation (GPT-4o-mini → GPT-4o), and async PDF ingestion — achieving <strong>Context Precision 1.00</strong> on real-world documents.</li>
-              <li>Delivered AI solutions for <strong>6+ enterprise clients</strong> across finance and tech — reducing system latency by <strong>70%</strong> and maintaining 99.9% uptime on Azure-deployed, Dockerised production systems.</li>
+              <li>Sole technical point of contact for <strong>6+ enterprise clients</strong> at Accenture — managed high-consequence financial systems processing <strong>1M+ records</strong>, reducing P1 incidents by 75% and maintaining 99.9% uptime, building the reliability mindset I now apply to AI systems.</li>
             </motion.ul>
             <motion.div className="about-links" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
               <a href="https://github.com/ShibjiRout" target="_blank" rel="noreferrer" className="about-link"><Github size={16} /> GitHub</a>
