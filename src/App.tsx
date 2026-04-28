@@ -47,21 +47,28 @@ const projects: Project[] = [
   {
     title: 'Brand Guardian AI',
     description:
-      'Multi-modal YouTube ad compliance auditing engine. Uses LangGraph to orchestrate Azure Video Indexer (OCR + speech-to-text), RAG retrieval from Azure AI Search, and GPT-4o auditing against real FTC disclosure rules — reducing review time by ~80% (60+ mins to under 10 mins). Returns structured JSON violation reports with category and severity.',
+      'Multi-modal YouTube ad compliance auditing engine. Orchestrated via LangGraph across Azure Video Indexer (OCR + speech-to-text), RAG retrieval from Azure AI Search, and GPT-4o auditing against real FTC disclosure rules — cutting review time by ~80% (60+ mins to under 10 mins). Delivers structured JSON violation reports with category and severity scoring.',
     tag: 'Agentic AI • LangGraph • Azure • GPT-4o',
     link: 'https://brandgurdian.azurewebsites.net',
   },
   {
-    title: 'DocLense Finance',
+    title: 'DocLense',
     description:
-      'Production RAG system for financial document Q&A using LangChain and ChromaDB. Enforces finance-domain restriction via a 6-step chain-of-thought reasoning pipeline. Async PDF ingestion with Case ID isolation prevents cross-client data contamination. Deployed via Docker to Azure Container Registry with automated CI/CD via GitHub Actions.',
-    tag: 'RAG • LangChain • Azure • Docker',
-    link: 'https://doclensefinance.azurewebsites.net/',
+      'AI document intelligence platform for PDF-native Q&A. Upload files with Case ID isolation, then query via a LangGraph RAG pipeline that classifies intent and adaptively escalates from GPT-4o-mini to GPT-4o based on real-time quality evaluation. Retrieves top-15 semantically relevant chunks from Qdrant; conversation history persisted in MongoDB. Deployed to Azure Container Apps via Docker CI/CD.',
+    tag: 'RAG • LangGraph • Qdrant • Azure',
+    link: 'https://doclense-server.victoriousisland-1f528db7.polandcentral.azurecontainerapps.io',
+  },
+  {
+    title: 'MSc Research: Lottery Ticket Hypothesis',
+    description:
+      'Academic research comparing Gradient Descent (GD) and Exponential Gradient (EG) optimisers on Fashion-MNIST using a recurrent neural network. Applies the Lottery Ticket Hypothesis with iterative magnitude pruning and weight rewinding. Includes network topology analysis (degree distribution, clustering coefficients) and automated learning-rate sweeps for rigorous, reproducible optimiser benchmarking.',
+    tag: 'PyTorch • RNN • Pruning • Research',
+    link: 'https://github.com/ShibjiRout/Msc_project',
   },
   {
     title: 'Student Performance Predictor',
     description:
-      'End-to-end ML pipeline comparing 9 regression models via GridSearchCV across 1,000 student records. Selected Ridge Regression with 88.06% R², exposing Decision Tree overfitting (99.97% train vs 75.72% test). Modular pipeline with ingestion, transformation, and trainer components deployed via Docker and CI/CD to Azure.',
+      'End-to-end ML pipeline benchmarking 9 regression models via GridSearchCV across 1,000 student records. Selected Ridge Regression at 88.06% R², exposing Decision Tree overfitting (99.97% train vs 75.72% test). Modular architecture with ingestion, transformation, and trainer components deployed via Docker and CI/CD to Azure.',
     tag: 'ML • Scikit-Learn • Docker • Azure',
     link: 'https://shibji-student-per.azurewebsites.net/',
   },
