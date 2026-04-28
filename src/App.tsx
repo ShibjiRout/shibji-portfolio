@@ -119,14 +119,6 @@ export default function App() {
         </motion.div>
 
         <div className="hero-name-row">
-          <motion.h1
-            className="hero-name"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          >
-            Shibji<br />Shekhar<br />Rout
-          </motion.h1>
           <motion.div
             className="hero-photo-wrap"
             initial={{ opacity: 0, scale: 0.92 }}
@@ -135,6 +127,14 @@ export default function App() {
           >
             <img src="/Shibji_Github.png" alt="Shibji Shekhar Rout" className="hero-photo" />
           </motion.div>
+          <motion.h1
+            className="hero-name"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          >
+            Shibji<br />Shekhar<br />Rout
+          </motion.h1>
         </div>
 
         <motion.div

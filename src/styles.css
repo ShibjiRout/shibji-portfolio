@@ -211,9 +211,9 @@ button { font: inherit; cursor: pointer; background: none; border: none; }
 
 .hero-name-row {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 2rem;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2.5rem;
 }
 
 .hero-name {
@@ -256,10 +256,11 @@ button { font: inherit; cursor: pointer; background: none; border: none; }
 }
 
 .hero-bottom {
-  display: grid;
-  grid-template-columns: 1fr 1.6fr;
-  gap: 3rem;
-  align-items: end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  max-width: 680px;
 }
 
 .hero-meta { margin-bottom: 1rem; }
@@ -835,8 +836,8 @@ button { font: inherit; cursor: pointer; background: none; border: none; }
   .hero { padding: 3.5rem 0 3rem; min-height: auto; }
   .hero-name { font-size: clamp(4rem, 17vw, 6rem); }
   .hero-name-row { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
-  .hero-photo-wrap { width: 100px; aspect-ratio: 1 / 1; border-radius: 999px; order: 2; }
-  .hero-name { order: 1; }
+  .hero-photo-wrap { width: 90px; aspect-ratio: 1 / 1; border-radius: 999px; order: 1; }
+  .hero-name { order: 2; }
   .about-stats { grid-template-columns: repeat(2, 1fr); }
   .skills-grid { grid-template-columns: 1fr; }
   .contact-box { padding: 3rem 1.5rem; }
