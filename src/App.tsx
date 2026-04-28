@@ -1,19 +1,13 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Brain, Briefcase, Cloud, Code2, Database, ExternalLink, FileText, Github, GraduationCap, Layers3, Linkedin, Mail, MapPin, Menu, X } from 'lucide-react'
+import { ArrowUpRight, Brain, Briefcase, Cloud, Code2, Database, FileText, Github, GraduationCap, Layers3, Linkedin, Mail, MapPin, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 
-type SkillGroup = {
-  title: string
-  icon: React.ReactNode
-  items: string[]
-}
-
 type Project = {
+  num: string
   title: string
-  description: string
   tag: string
+  description: string
   link: string
-  number: string
 }
 
 type Experience = {
@@ -23,68 +17,45 @@ type Experience = {
   location: string
   icon: React.ReactNode
   points: string[]
-  type: 'work' | 'education'
 }
 
-const skillGroups: SkillGroup[] = [
-  {
-    title: 'AI & Agentic Systems',
-    icon: <Brain size={20} />,
-    items: ['LangChain', 'LangGraph', 'RAG Systems', 'MCP (Brave/Gmail)', 'Prompt Engineering', 'Agentic Workflows'],
-  },
-  {
-    title: 'ML & Data Science',
-    icon: <Layers3 size={20} />,
-    items: ['PyTorch', 'Scikit-Learn', 'XGBoost', 'CatBoost', 'Pandas', 'NumPy'],
-  },
-  {
-    title: 'Retrieval & Memory',
-    icon: <Database size={20} />,
-    items: ['Qdrant', 'ChromaDB', 'Milvus', 'PostgreSQL', 'Neo4j', 'Semantic Search'],
-  },
-  {
-    title: 'Backend & Frameworks',
-    icon: <Code2 size={20} />,
-    items: ['FastAPI', 'Flask', 'Python (Asyncio)', 'SQL', 'REST APIs', 'Node.js'],
-  },
-  {
-    title: 'Cloud & Deployment',
-    icon: <Cloud size={20} />,
-    items: ['Azure Container Apps', 'Azure ACR', 'Docker', 'GitHub Actions', 'CI/CD', 'System Design'],
-  },
-]
+type SkillGroup = {
+  title: string
+  icon: React.ReactNode
+  items: string[]
+}
 
 const projects: Project[] = [
   {
-    number: '01',
+    num: '01',
     title: 'Brand Guardian AI',
+    tag: 'Agentic AI · LangGraph · Azure · GPT-4o',
     description:
-      'Multi-modal YouTube ad compliance auditing engine. Orchestrated via LangGraph across Azure Video Indexer (OCR + speech-to-text), RAG retrieval from Azure AI Search, and GPT-4o auditing against real FTC disclosure rules — cutting review time by ~80%.',
-    tag: 'Agentic AI • LangGraph • Azure • GPT-4o',
+      'Multi-modal YouTube ad compliance engine. LangGraph orchestrates Azure Video Indexer, RAG retrieval from Azure AI Search, and GPT-4o auditing against real FTC rules — cutting review time by ~80%.',
     link: 'https://brandgurdian.azurewebsites.net',
   },
   {
-    number: '02',
+    num: '02',
     title: 'DocLense',
+    tag: 'RAG · LangGraph · Qdrant · Azure',
     description:
-      'AI document intelligence platform for PDF-native Q&A. LangGraph RAG pipeline adaptively escalates from GPT-4o-mini to GPT-4o based on quality evaluation. Retrieves top-15 chunks from Qdrant; conversation history in MongoDB. Deployed to Azure Container Apps.',
-    tag: 'RAG • LangGraph • Qdrant • Azure',
+      'PDF-native Q&A platform. LangGraph pipeline classifies intent and adaptively escalates from GPT-4o-mini to GPT-4o. Top-15 chunk retrieval from Qdrant, conversation history in MongoDB, deployed on Azure Container Apps.',
     link: 'https://doclense-server.victoriousisland-1f528db7.polandcentral.azurecontainerapps.io',
   },
   {
-    number: '03',
-    title: 'MSc Research: Lottery Ticket Hypothesis',
+    num: '03',
+    title: 'MSc Research — Lottery Ticket Hypothesis',
+    tag: 'PyTorch · RNN · Pruning · Research',
     description:
-      'Research comparing Gradient Descent and Exponential Gradient optimisers on Fashion-MNIST with a recurrent neural network. Applies Lottery Ticket Hypothesis with iterative magnitude pruning and weight rewinding. Includes network topology analysis and automated learning-rate sweeps.',
-    tag: 'PyTorch • RNN • Pruning • Research',
+      'Comparing Gradient Descent vs Exponential Gradient optimisers on Fashion-MNIST with a recurrent network. Applies iterative magnitude pruning with weight rewinding and network topology analysis.',
     link: 'https://github.com/ShibjiRout/Msc_project',
   },
   {
-    number: '04',
+    num: '04',
     title: 'Student Performance Predictor',
+    tag: 'ML · Scikit-Learn · Docker · Azure',
     description:
-      'End-to-end ML pipeline benchmarking 9 regression models via GridSearchCV across 1,000 student records. Selected Ridge Regression at 88.06% R², exposing Decision Tree overfitting. Modular architecture deployed via Docker and CI/CD to Azure.',
-    tag: 'ML • Scikit-Learn • Docker • Azure',
+      'End-to-end pipeline benchmarking 9 regression models via GridSearchCV. Ridge Regression selected at 88.06% R². Modular ingestion, transformation, and trainer components deployed to Azure via Docker CI/CD.',
     link: 'https://shibji-student-per.azurewebsites.net/',
   },
 ]
@@ -95,13 +66,11 @@ const experiences: Experience[] = [
     company: 'Accenture',
     period: '2021 – 2023',
     location: 'India',
-    icon: <Briefcase size={18} />,
-    type: 'work',
+    icon: <Briefcase size={16} />,
     points: [
       'Managed high-consequence financial modules processing 1M+ records with zero critical failures',
-      'Reduced system latency by 70% through pipeline optimisation and async processing improvements',
-      'Maintained 99.9% system uptime across production environments with 97% SLA compliance',
-      'Collaborated across cross-functional teams to deliver enterprise-grade software on tight deadlines',
+      'Reduced system latency by 70% through pipeline and async processing optimisations',
+      'Maintained 99.9% uptime across production environments with 97% SLA compliance',
     ],
   },
   {
@@ -109,267 +78,226 @@ const experiences: Experience[] = [
     company: 'University of Leeds',
     period: '2023 – 2024',
     location: 'Leeds, UK',
-    icon: <GraduationCap size={18} />,
-    type: 'education',
+    icon: <GraduationCap size={16} />,
     points: [
       'Graduated with Merit — specialising in machine learning and intelligent systems',
-      'Dissertation: Lottery Ticket Hypothesis on RNNs with custom EG optimiser implementation',
+      'Dissertation: Lottery Ticket Hypothesis on RNNs with custom EG optimiser',
       'Deep coursework in neural networks, distributed systems, and software engineering',
     ],
   },
 ]
 
-const navItems = [
+const skillGroups: SkillGroup[] = [
+  { title: 'AI & Agents', icon: <Brain size={16} />, items: ['LangChain', 'LangGraph', 'RAG Systems', 'Prompt Engineering', 'Agentic Workflows', 'MCP'] },
+  { title: 'ML & Data', icon: <Layers3 size={16} />, items: ['PyTorch', 'Scikit-Learn', 'XGBoost', 'CatBoost', 'Pandas', 'NumPy'] },
+  { title: 'Retrieval & Memory', icon: <Database size={16} />, items: ['Qdrant', 'ChromaDB', 'Milvus', 'PostgreSQL', 'Neo4j', 'Semantic Search'] },
+  { title: 'Backend', icon: <Code2 size={16} />, items: ['FastAPI', 'Flask', 'Python Asyncio', 'REST APIs', 'SQL', 'Node.js'] },
+  { title: 'Cloud & DevOps', icon: <Cloud size={16} />, items: ['Azure Container Apps', 'Azure ACR', 'Docker', 'GitHub Actions', 'CI/CD', 'System Design'] },
+]
+
+const navLinks = [
   { label: 'About', href: '#about' },
+  { label: 'Work', href: '#projects' },
   { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
   { label: 'Skills', href: '#skills' },
 ]
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  show: (i: number) => ({ opacity: 1, y: 0, transition: { delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] } }),
+  hidden: { opacity: 0, y: 28 },
+  show: (i = 0) => ({
+    opacity: 1, y: 0,
+    transition: { delay: i * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+  }),
 }
 
-function App() {
-  const [menuOpen, setMenuOpen] = useState(false)
+export default function App() {
+  const [open, setOpen] = useState(false)
 
   return (
-    <div className="app-shell">
-      <div className="bg-orb bg-orb-one" />
-      <div className="bg-orb bg-orb-two" />
-      <div className="bg-orb bg-orb-three" />
-
+    <div className="site">
       {/* ── NAV ── */}
-      <header className="topbar">
-        <a className="brand" href="#home">
-          <span className="brand-badge">SR</span>
-          <span className="brand-name">Shibji Shekhar Rout</span>
+      <header className="nav">
+        <a className="nav-brand" href="#home">
+          <span className="nav-avatar">SR</span>
+          <span>Shibji Shekhar Rout</span>
         </a>
 
-        <nav className="nav-desktop">
-          {navItems.map((item) => (
-            <a key={item.href} href={item.href} className="nav-link">
-              {item.label}
-            </a>
-          ))}
+        <nav className="nav-links">
+          {navLinks.map((l) => <a key={l.href} href={l.href}>{l.label}</a>)}
         </nav>
 
-        <div className="nav-actions">
-          <a className="nav-pill" href="https://github.com/ShibjiRout" target="_blank" rel="noreferrer">
-            <Github size={16} /> GitHub
+        <div className="nav-end">
+          <a href="https://github.com/ShibjiRout" target="_blank" rel="noreferrer" className="nav-icon-btn" aria-label="GitHub">
+            <Github size={18} />
           </a>
-          <a className="nav-pill nav-pill-outline" href="mailto:mrshibji@gmail.com">
-            <Mail size={16} /> Contact
+          <a href="https://www.linkedin.com/in/shibji-shekhar-rout" target="_blank" rel="noreferrer" className="nav-icon-btn" aria-label="LinkedIn">
+            <Linkedin size={18} />
+          </a>
+          <a href="mailto:mrshibji@gmail.com" className="btn-solid">
+            Hire Me
           </a>
         </div>
 
-        <button className="menu-button" onClick={() => setMenuOpen((v) => !v)} aria-label="Toggle menu">
-          {menuOpen ? <X size={20} /> : <Menu size={20} />}
+        <button className="hamburger" onClick={() => setOpen(v => !v)} aria-label="menu">
+          {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </header>
 
-      {menuOpen && (
-        <motion.div className="mobile-menu" initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }}>
-          {navItems.map((item) => (
-            <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}>{item.label}</a>
-          ))}
-          <a href="https://github.com/ShibjiRout" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>GitHub</a>
-          <a href="https://www.linkedin.com/in/shibji-shekhar-rout" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>LinkedIn</a>
+      {open && (
+        <motion.div className="mobile-nav" initial={{ opacity: 0, y: -6 }} animate={{ opacity: 1, y: 0 }}>
+          {navLinks.map((l) => <a key={l.href} href={l.href} onClick={() => setOpen(false)}>{l.label}</a>)}
+          <a href="mailto:mrshibji@gmail.com" onClick={() => setOpen(false)}>Contact</a>
         </motion.div>
       )}
 
       <main>
         {/* ── HERO ── */}
-        <section className="hero-section" id="home">
-          <div className="hero-inner">
-            <motion.div className="hero-left" initial="hidden" animate="show">
-              <motion.p className="eyebrow" custom={0} variants={fadeUp}>
-                AI Engineer &nbsp;·&nbsp; Agentic Systems &nbsp;·&nbsp; Leeds, UK
-              </motion.p>
-              <motion.h1 className="hero-headline" custom={1} variants={fadeUp}>
-                Building AI<br />that actually<br /><span className="headline-accent">ships.</span>
-              </motion.h1>
-              <motion.p className="hero-sub" custom={2} variants={fadeUp}>
-                I design and deploy end-to-end agentic AI systems — RAG pipelines, LangGraph orchestration, and ML
-                production systems that are fast, secure, and built to last.
-              </motion.p>
-              <motion.div className="hero-ctas" custom={3} variants={fadeUp}>
-                <a className="btn-primary" href="#projects">
-                  View Projects <ArrowRight size={16} />
-                </a>
-                <a className="btn-ghost" href="/Shibji_Rout.pdf" target="_blank" rel="noreferrer">
-                  <FileText size={16} /> Resume
-                </a>
-                <a className="btn-icon" href="https://www.linkedin.com/in/shibji-shekhar-rout" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-                  <Linkedin size={18} />
-                </a>
-              </motion.div>
+        <section className="hero" id="home">
+          <motion.div className="hero-content" initial="hidden" animate="show">
+            <motion.p className="hero-tag" custom={0} variants={fadeUp}>
+              AI Engineer &nbsp;·&nbsp; Agentic Systems &nbsp;·&nbsp; Leeds, UK
+            </motion.p>
+            <motion.h1 custom={1} variants={fadeUp}>
+              Architecting AI<br />systems that<br /><em>actually work.</em>
+            </motion.h1>
+            <motion.p className="hero-desc" custom={2} variants={fadeUp}>
+              I build end-to-end agentic AI — LangGraph pipelines, production RAG systems, and
+              ML solutions. Ex-Accenture. MSc Computer Science, University of Leeds.
+            </motion.p>
+            <motion.div className="hero-actions" custom={3} variants={fadeUp}>
+              <a className="btn-solid" href="#projects">See My Work</a>
+              <a className="btn-outline" href="/Shibji_Rout.pdf" target="_blank" rel="noreferrer">
+                <FileText size={16} /> Resume
+              </a>
             </motion.div>
+          </motion.div>
 
-            <motion.div className="hero-right" initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}>
-              <div className="hero-card">
-                <div className="hero-card-header">
-                  <span className="live-dot" />
-                  <span>System Status — Live</span>
-                </div>
-                <p className="hero-card-desc">
-                  Specialising in agentic AI systems with Azure cloud infrastructure and LangGraph orchestration.
-                </p>
-                <div className="metrics-grid">
-                  <div className="metric">
-                    <strong>70%</strong>
-                    <span>Latency Cut</span>
-                  </div>
-                  <div className="metric">
-                    <strong>+45%</strong>
-                    <span>Retrieval Accuracy</span>
-                  </div>
-                  <div className="metric">
-                    <strong>99.9%</strong>
-                    <span>Uptime</span>
-                  </div>
-                  <div className="metric">
-                    <strong>1M+</strong>
-                    <span>Records Managed</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="hero-tags">
-                {['LangGraph', 'RAG', 'Azure', 'PyTorch', 'FastAPI', 'Docker'].map((t) => (
-                  <span key={t} className="hero-tag">{t}</span>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Stats bar */}
           <motion.div
-            className="stats-bar"
+            className="hero-stats"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.55, duration: 0.6 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
           >
-            <div className="stat-item">
+            <div className="hstat">
               <strong>4+</strong>
               <span>Production Projects</span>
             </div>
-            <div className="stat-divider" />
-            <div className="stat-item">
+            <div className="hstat-div" />
+            <div className="hstat">
               <strong>2+</strong>
-              <span>Years Industry Exp.</span>
+              <span>Years at Accenture</span>
             </div>
-            <div className="stat-divider" />
-            <div className="stat-item">
-              <strong>MSc</strong>
-              <span>University of Leeds</span>
+            <div className="hstat-div" />
+            <div className="hstat">
+              <strong>70%</strong>
+              <span>Latency Reduced</span>
             </div>
-            <div className="stat-divider" />
-            <div className="stat-item">
-              <strong>Azure</strong>
-              <span>Cloud Deployed</span>
+            <div className="hstat-div" />
+            <div className="hstat">
+              <strong>1M+</strong>
+              <span>Records Managed</span>
             </div>
           </motion.div>
         </section>
 
         {/* ── ABOUT ── */}
-        <section className="section" id="about">
-          <div className="section-label">About</div>
-          <div className="about-layout">
-            <motion.div
-              className="about-headline"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2>
-                I turn complex AI research<br />into production-ready systems.
-              </h2>
-            </motion.div>
-            <div className="about-cards">
-              <motion.div
-                className="glass-card"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
+        <section className="section about-section" id="about">
+          <div className="section-row">
+            <div className="section-col-label">
+              <span className="label-tag">About</span>
+            </div>
+            <div className="section-col-content">
+              <motion.h2
+                className="about-headline"
+                initial="hidden" whileInView="show" viewport={{ once: true }}
+                variants={fadeUp}
               >
-                <h3>What I Build</h3>
-                <p>
-                  Retrieval-augmented generation (RAG) systems, autonomous multi-agent pipelines,
-                  and end-to-end ML solutions. I care deeply about reliability, latency, and
-                  shipping AI that actually works under real-world constraints.
-                </p>
-              </motion.div>
-              <motion.div
-                className="glass-card about-highlight"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.18 }}
+                I turn complex AI research into production systems that ship.
+              </motion.h2>
+              <motion.p
+                className="about-body"
+                initial="hidden" whileInView="show" viewport={{ once: true }}
+                custom={1} variants={fadeUp}
               >
-                <h3>Background</h3>
-                <ul className="about-list">
-                  <li>
-                    <GraduationCap size={16} />
-                    MSc Advanced Computer Science — University of Leeds (Merit)
-                  </li>
-                  <li>
-                    <Briefcase size={16} />
-                    Ex-Accenture Analyst — high-consequence financial systems, 1M+ records
-                  </li>
-                  <li>
-                    <MapPin size={16} />
-                    Based in UK — open to remote &amp; hybrid roles globally
-                  </li>
-                  <li>
-                    <Cloud size={16} />
-                    Azure-certified cloud architecture &amp; CI/CD workflows
-                  </li>
-                </ul>
+                I specialise in retrieval-augmented generation (RAG) and autonomous multi-agent
+                systems. With a background in managing enterprise-scale financial infrastructure at
+                Accenture, I understand what it means to build for reliability, performance, and scale.
+                My MSc research gave me a deep foundation in neural network theory — I bring both
+                the practical and the academic to every project.
+              </motion.p>
+              <motion.div
+                className="about-pills"
+                initial="hidden" whileInView="show" viewport={{ once: true }}
+                custom={2} variants={fadeUp}
+              >
+                <span><GraduationCap size={14} /> MSc, University of Leeds</span>
+                <span><Briefcase size={14} /> Ex-Accenture Analyst</span>
+                <span><MapPin size={14} /> Leeds, UK</span>
+                <span><Cloud size={14} /> Azure Certified</span>
               </motion.div>
             </div>
           </div>
         </section>
 
+        {/* ── PROJECTS ── */}
+        <section className="section" id="projects">
+          <div className="section-row section-row-top">
+            <div className="section-col-label">
+              <span className="label-tag">Work</span>
+            </div>
+            <h2 className="section-title">Selected Projects</h2>
+          </div>
+          <div className="project-grid">
+            {projects.map((p, i) => (
+              <motion.a
+                key={p.num}
+                href={p.link}
+                target="_blank"
+                rel="noreferrer"
+                className="project-card"
+                initial="hidden" whileInView="show" viewport={{ once: true }}
+                custom={i * 0.5} variants={fadeUp}
+              >
+                <div className="project-card-top">
+                  <span className="project-num">{p.num}</span>
+                  <ArrowUpRight size={20} className="project-arrow" />
+                </div>
+                <h3>{p.title}</h3>
+                <p className="project-tag-line">{p.tag}</p>
+                <p className="project-desc">{p.description}</p>
+              </motion.a>
+            ))}
+          </div>
+        </section>
+
         {/* ── EXPERIENCE ── */}
         <section className="section" id="experience">
-          <div className="section-label">Experience</div>
-          <motion.h2
-            className="section-title"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            Where I've worked &amp; studied
-          </motion.h2>
+          <div className="section-row section-row-top">
+            <div className="section-col-label">
+              <span className="label-tag">Experience</span>
+            </div>
+            <h2 className="section-title">Where I've worked</h2>
+          </div>
           <div className="exp-list">
-            {experiences.map((exp, i) => (
+            {experiences.map((e, i) => (
               <motion.div
-                key={exp.company}
-                className={`exp-card ${exp.type === 'education' ? 'exp-education' : ''}`}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
+                key={e.company}
+                className="exp-item"
+                initial="hidden" whileInView="show" viewport={{ once: true }}
+                custom={i * 0.5} variants={fadeUp}
               >
-                <div className="exp-meta">
-                  <div className="exp-icon">{exp.icon}</div>
+                <div className="exp-left">
+                  <div className="exp-icon">{e.icon}</div>
                   <div>
-                    <div className="exp-period">{exp.period}</div>
-                    <div className="exp-location">
-                      <MapPin size={13} /> {exp.location}
-                    </div>
+                    <div className="exp-period">{e.period}</div>
+                    <div className="exp-loc"><MapPin size={12} />{e.location}</div>
                   </div>
                 </div>
-                <div className="exp-body">
-                  <h3 className="exp-role">{exp.role}</h3>
-                  <p className="exp-company">{exp.company}</p>
+                <div className="exp-right">
+                  <h3 className="exp-role">{e.role}</h3>
+                  <p className="exp-company">{e.company}</p>
                   <ul className="exp-points">
-                    {exp.points.map((point) => (
-                      <li key={point}>{point}</li>
-                    ))}
+                    {e.points.map((pt) => <li key={pt}>{pt}</li>)}
                   </ul>
                 </div>
               </motion.div>
@@ -377,73 +305,28 @@ function App() {
           </div>
         </section>
 
-        {/* ── PROJECTS ── */}
-        <section className="section" id="projects">
-          <div className="section-label">Projects</div>
-          <motion.h2
-            className="section-title"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            Selected AI/ML Work
-          </motion.h2>
-          <div className="project-list">
-            {projects.map((project, i) => (
-              <motion.a
-                key={project.title}
-                className="project-row"
-                href={project.link}
-                target="_blank"
-                rel="noreferrer"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.07 }}
-              >
-                <span className="project-num">{project.number}</span>
-                <div className="project-info">
-                  <div className="project-row-top">
-                    <h3>{project.title}</h3>
-                    <span className="project-badge">{project.tag}</span>
-                  </div>
-                  <p>{project.description}</p>
-                </div>
-                <ExternalLink size={20} className="project-arrow" />
-              </motion.a>
-            ))}
-          </div>
-        </section>
-
         {/* ── SKILLS ── */}
         <section className="section" id="skills">
-          <div className="section-label">Skills</div>
-          <motion.h2
-            className="section-title"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            Technical Stack
-          </motion.h2>
+          <div className="section-row section-row-top">
+            <div className="section-col-label">
+              <span className="label-tag">Skills</span>
+            </div>
+            <h2 className="section-title">Technical Stack</h2>
+          </div>
           <div className="skill-grid">
-            {skillGroups.map((group, i) => (
+            {skillGroups.map((g, i) => (
               <motion.div
-                key={group.title}
-                className="skill-card glass-card"
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.06 }}
+                key={g.title}
+                className="skill-block"
+                initial="hidden" whileInView="show" viewport={{ once: true }}
+                custom={i * 0.4} variants={fadeUp}
               >
-                <div className="skill-header">
-                  <span className="icon-wrap">{group.icon}</span>
-                  <h3>{group.title}</h3>
+                <div className="skill-block-title">
+                  <span className="skill-icon">{g.icon}</span>
+                  {g.title}
                 </div>
-                <div className="chip-wrap">
-                  {group.items.map((item) => (
-                    <span key={item} className="chip">{item}</span>
-                  ))}
+                <div className="skill-chips">
+                  {g.items.map((item) => <span key={item} className="chip">{item}</span>)}
                 </div>
               </motion.div>
             ))}
@@ -453,25 +336,24 @@ function App() {
         {/* ── CONTACT ── */}
         <section className="section contact-section" id="contact">
           <motion.div
-            className="contact-card"
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            className="contact-inner"
+            initial="hidden" whileInView="show" viewport={{ once: true }}
+            variants={fadeUp}
           >
-            <p className="eyebrow">Get In Touch</p>
-            <h2>Let's build something<br />remarkable together.</h2>
-            <p className="contact-sub">
+            <span className="label-tag">Contact</span>
+            <h2>Let's work together.</h2>
+            <p>
               Open to AI Engineer roles, freelance ML projects, and research collaborations.
-              Drop me an email and I'll get back to you within 24 hours.
+              I respond within 24 hours.
             </p>
             <div className="contact-actions">
-              <a className="btn-primary btn-lg" href="mailto:mrshibji@gmail.com">
+              <a className="btn-solid btn-lg" href="mailto:mrshibji@gmail.com">
                 <Mail size={18} /> mrshibji@gmail.com
               </a>
-              <a className="btn-ghost btn-lg" href="https://www.linkedin.com/in/shibji-shekhar-rout" target="_blank" rel="noreferrer">
+              <a className="btn-outline btn-lg" href="https://www.linkedin.com/in/shibji-shekhar-rout" target="_blank" rel="noreferrer">
                 <Linkedin size={18} /> LinkedIn
               </a>
-              <a className="btn-ghost btn-lg" href="/Shibji_Rout.pdf" target="_blank" rel="noreferrer">
+              <a className="btn-outline btn-lg" href="/Shibji_Rout.pdf" target="_blank" rel="noreferrer">
                 <FileText size={18} /> Resume
               </a>
             </div>
@@ -482,12 +364,12 @@ function App() {
       {/* ── FOOTER ── */}
       <footer className="footer">
         <div className="footer-inner">
-          <a className="brand" href="#home">
-            <span className="brand-badge brand-badge-sm">SR</span>
+          <a className="nav-brand" href="#home">
+            <span className="nav-avatar nav-avatar-sm">SR</span>
             <span>Shibji Shekhar Rout</span>
           </a>
-          <p className="footer-copy">© 2025 · AI Engineer · Leeds, UK</p>
-          <div className="footer-links">
+          <p>© 2025 · AI Engineer · Leeds, UK</p>
+          <div className="footer-icons">
             <a href="https://github.com/ShibjiRout" target="_blank" rel="noreferrer"><Github size={18} /></a>
             <a href="https://www.linkedin.com/in/shibji-shekhar-rout" target="_blank" rel="noreferrer"><Linkedin size={18} /></a>
             <a href="mailto:mrshibji@gmail.com"><Mail size={18} /></a>
@@ -497,5 +379,3 @@ function App() {
     </div>
   )
 }
-
-export default App
