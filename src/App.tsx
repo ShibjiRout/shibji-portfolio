@@ -184,10 +184,10 @@ export default function App() {
               I turn complex AI research into systems that actually ship — reliably, at scale.
             </motion.h2>
             <motion.ul className="about-highlights" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-              <li>AI Engineer with <strong>3 years of enterprise delivery</strong> and an MSc in Advanced Computer Science (Leeds, Merit) — built and deployed production LangGraph pipelines and RAG systems on Azure with a <strong>98% pipeline success rate</strong>.</li>
-              <li>Sole <strong>technical point of contact for 6+ enterprise clients</strong> across finance and tech at Accenture — independently owning end-to-end delivery and stakeholder communication.</li>
-              <li>Diagnosed production failures via JDE log analysis, driving an architectural upgrade from JDE 9.1 to 9.2 — <strong>reducing P1 incidents by 75%</strong>.</li>
-              <li>Engineered SQL solutions processing <strong>1M+ financial records</strong> on live production systems, including INR currency integration directly impacting client financial operations.</li>
+              <li>Built and deployed production <strong>LangGraph pipelines and RAG systems on Azure</strong> achieving a <strong>98% pipeline success rate</strong> — combining 3 years of enterprise delivery with an MSc in Advanced Computer Science (Leeds, Merit).</li>
+              <li>Architected <strong>multi-agent AI systems</strong> using LangGraph, LangChain, and GPT-4o — including a multi-modal compliance engine (Brand Guardian AI) that reduced review time by <strong>~80%</strong> using Azure Video Indexer and RAG retrieval.</li>
+              <li>Designed and deployed <strong>production RAG platforms</strong> with Qdrant vector search, adaptive model escalation (GPT-4o-mini → GPT-4o), and async PDF ingestion — achieving <strong>Context Precision 1.00</strong> on real-world documents.</li>
+              <li>Delivered AI solutions for <strong>6+ enterprise clients</strong> across finance and tech — reducing system latency by <strong>70%</strong> and maintaining 99.9% uptime on Azure-deployed, Dockerised production systems.</li>
             </motion.ul>
             <motion.div className="about-links" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
               <a href="https://github.com/ShibjiRout" target="_blank" rel="noreferrer" className="about-link"><Github size={16} /> GitHub</a>
