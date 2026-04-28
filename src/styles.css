@@ -227,17 +227,17 @@ button { font: inherit; cursor: pointer; background: none; border: none; }
 
 .hero-photo-wrap {
   flex-shrink: 0;
-  border-radius: 24px;
+  border-radius: 999px;
   overflow: hidden;
   border: 2px solid rgba(37, 99, 235, 0.5);
   box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12), 0 20px 60px rgba(0, 0, 0, 0.5);
-  width: clamp(200px, 22vw, 320px);
-  aspect-ratio: 3 / 4;
+  width: clamp(140px, 14vw, 200px);
+  aspect-ratio: 1 / 1;
   transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s, border-color 0.35s;
 }
 
 .hero-photo-wrap:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-8px) scale(1.04);
   border-color: rgba(37, 99, 235, 0.9);
   box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.2), 0 30px 70px rgba(37, 99, 235, 0.25);
 }
@@ -252,7 +252,7 @@ button { font: inherit; cursor: pointer; background: none; border: none; }
 }
 
 .hero-photo-wrap:hover .hero-photo {
-  transform: scale(1.04);
+  transform: scale(1.06);
 }
 
 .hero-bottom {
@@ -421,6 +421,36 @@ button { font: inherit; cursor: pointer; background: none; border: none; }
   max-width: 55ch;
   margin-bottom: 1.75rem;
 }
+
+.about-highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.75rem;
+}
+
+.about-highlights li {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.75;
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.about-highlights li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--blue);
+  flex-shrink: 0;
+}
+
+.about-highlights li strong { color: var(--text); font-weight: 700; }
 
 .about-links {
   display: flex;
@@ -804,8 +834,9 @@ button { font: inherit; cursor: pointer; background: none; border: none; }
   .navbar { padding: 0.75rem 1rem; }
   .hero { padding: 3.5rem 0 3rem; min-height: auto; }
   .hero-name { font-size: clamp(4rem, 17vw, 6rem); }
-  .hero-name-row { flex-direction: column; align-items: flex-start; gap: 2rem; }
-  .hero-photo-wrap { width: 140px; aspect-ratio: 1 / 1; border-radius: 999px; }
+  .hero-name-row { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  .hero-photo-wrap { width: 100px; aspect-ratio: 1 / 1; border-radius: 999px; order: 2; }
+  .hero-name { order: 1; }
   .about-stats { grid-template-columns: repeat(2, 1fr); }
   .skills-grid { grid-template-columns: 1fr; }
   .contact-box { padding: 3rem 1.5rem; }

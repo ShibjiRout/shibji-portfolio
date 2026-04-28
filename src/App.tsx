@@ -145,7 +145,7 @@ export default function App() {
         >
           <div className="hero-meta">
             <p className="hero-role">AI Engineer · Agentic Systems</p>
-            <p className="hero-location">Leeds, UK · Open to Remote</p>
+            <p className="hero-location">London, UK · Open to Remote</p>
           </div>
           <p className="hero-desc">
             I build end-to-end AI systems — LangGraph agents, RAG pipelines, and ML solutions
@@ -173,22 +173,22 @@ export default function App() {
           <div className="about-left">
             <span className="section-tag">About</span>
             <div className="about-stats">
-              <div className="astat"><strong>2+</strong><span>Years Industry</span></div>
-              <div className="astat"><strong>4+</strong><span>Live Projects</span></div>
-              <div className="astat"><strong>MSc</strong><span>Leeds Uni</span></div>
-              <div className="astat"><strong>1M+</strong><span>Records Managed</span></div>
+              <div className="astat"><strong>3+</strong><span>Years Enterprise Delivery</span></div>
+              <div className="astat"><strong>6+</strong><span>Client Relationships</span></div>
+              <div className="astat"><strong>98%</strong><span>Pipeline Success Rate</span></div>
+              <div className="astat"><strong>75%</strong><span>P1 Incidents Reduced</span></div>
             </div>
           </div>
           <div className="about-right">
             <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               I turn complex AI research into systems that actually ship — reliably, at scale.
             </motion.h2>
-            <motion.p initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-              At Accenture I managed enterprise-grade financial infrastructure — 1M+ records, near-zero downtime,
-              97% SLA compliance. That background informs how I build AI: I care deeply about production reliability,
-              not just demo accuracy. My MSc at the University of Leeds gave me a strong ML theory foundation,
-              from neural network optimisation to distributed systems.
-            </motion.p>
+            <motion.ul className="about-highlights" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+              <li>AI Engineer with <strong>3 years of enterprise delivery</strong> and an MSc in Advanced Computer Science (Leeds, Merit) — built and deployed production LangGraph pipelines and RAG systems on Azure with a <strong>98% pipeline success rate</strong>.</li>
+              <li>Sole <strong>technical point of contact for 6+ enterprise clients</strong> across finance and tech at Accenture — independently owning end-to-end delivery and stakeholder communication.</li>
+              <li>Diagnosed production failures via JDE log analysis, driving an architectural upgrade from JDE 9.1 to 9.2 — <strong>reducing P1 incidents by 75%</strong>.</li>
+              <li>Engineered SQL solutions processing <strong>1M+ financial records</strong> on live production systems, including INR currency integration directly impacting client financial operations.</li>
+            </motion.ul>
             <motion.div className="about-links" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
               <a href="https://github.com/ShibjiRout" target="_blank" rel="noreferrer" className="about-link"><Github size={16} /> GitHub</a>
               <a href="https://www.linkedin.com/in/shibji-shekhar-rout" target="_blank" rel="noreferrer" className="about-link"><Linkedin size={16} /> LinkedIn</a>
@@ -326,7 +326,7 @@ export default function App() {
       <footer className="footer">
         <div className="footer-inner">
           <a href="#home" className="logo footer-logo">Shibji<span>.</span></a>
-          <p>© 2025 · AI Engineer · Leeds, UK</p>
+          <p>© 2025 · AI Engineer · London, UK</p>
           <div className="footer-icons">
             <a href="https://github.com/ShibjiRout" target="_blank" rel="noreferrer"><Github size={17} /></a>
             <a href="https://www.linkedin.com/in/shibji-shekhar-rout" target="_blank" rel="noreferrer"><Linkedin size={17} /></a>
