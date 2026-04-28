@@ -212,8 +212,8 @@ button { font: inherit; cursor: pointer; background: none; border: none; }
 .hero-name-row {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 2.5rem;
+  justify-content: space-between;
+  gap: 2rem;
 }
 
 .hero-name {
@@ -260,7 +260,7 @@ button { font: inherit; cursor: pointer; background: none; border: none; }
   flex-direction: column;
   align-items: flex-start;
   gap: 0;
-  max-width: 680px;
+  max-width: 60%;
 }
 
 .hero-meta { margin-bottom: 1rem; }
@@ -835,9 +835,9 @@ button { font: inherit; cursor: pointer; background: none; border: none; }
   .navbar { padding: 0.75rem 1rem; }
   .hero { padding: 3.5rem 0 3rem; min-height: auto; }
   .hero-name { font-size: clamp(4rem, 17vw, 6rem); }
-  .hero-name-row { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
-  .hero-photo-wrap { width: 90px; aspect-ratio: 1 / 1; border-radius: 999px; order: 1; }
-  .hero-name { order: 2; }
+  .hero-name-row { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+  .hero-photo-wrap { width: 90px; aspect-ratio: 1 / 1; border-radius: 999px; order: -1; }
+  .hero-bottom { max-width: 100%; }
   .about-stats { grid-template-columns: repeat(2, 1fr); }
   .skills-grid { grid-template-columns: 1fr; }
   .contact-box { padding: 3rem 1.5rem; }
