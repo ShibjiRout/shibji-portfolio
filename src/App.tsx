@@ -153,7 +153,7 @@ export default function App() {
           </p>
           <div className="hero-ctas">
             <a href="#work" className="pill-btn pill-btn-lg">See My Work <ArrowUpRight size={16} /></a>
-            <a href="/Shibji_Rout.pdf" target="_blank" rel="noreferrer" className="ghost-btn ghost-btn-lg"><FileText size={16} /> Resume</a>
+            <a href="https://drive.google.com/file/d/13PJiM4I_Z0uALk--Sh5pVnswraHQkq6v/view?usp=sharing" target="_blank" rel="noreferrer" className="ghost-btn ghost-btn-lg"><FileText size={16} /> Resume</a>
           </div>
         </motion.div>
       </section>
@@ -317,7 +317,7 @@ export default function App() {
           <div className="contact-btns">
             <a href="mailto:mrshibji@gmail.com" className="pill-btn pill-btn-lg"><Mail size={17} /> mrshibji@gmail.com</a>
             <a href="https://www.linkedin.com/in/shibji-shekhar-rout" target="_blank" rel="noreferrer" className="ghost-btn ghost-btn-lg"><Linkedin size={17} /> LinkedIn</a>
-            <a href="/Shibji_Rout.pdf" target="_blank" rel="noreferrer" className="ghost-btn ghost-btn-lg"><FileText size={17} /> Resume</a>
+            <a href="https://drive.google.com/file/d/13PJiM4I_Z0uALk--Sh5pVnswraHQkq6v/view?usp=sharing" target="_blank" rel="noreferrer" className="ghost-btn ghost-btn-lg"><FileText size={17} /> Resume</a>
           </div>
         </motion.div>
       </section>
