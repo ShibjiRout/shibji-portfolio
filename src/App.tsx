@@ -613,7 +613,7 @@ export default function App() {
             <span className="contactEyebrow">Contact</span>
             <h2>Let us build AI software that survives production.</h2>
             <p>
-              Open to AI Engineer, Software Engineer, Data Engineer, and applied LLM roles where reliable systems matter.
+              Open to AI Engineer and applied LLM roles where reliable systems matter.
             </p>
           </div>
           <div className="contactButtons">
@@ -638,7 +638,7 @@ export default function App() {
           <MapPin size={15} />
           London, UK
         </span>
-        <p>Shibji Shekhar Rout - AI Engineer + Software Engineer</p>
+        <p>Shibji Shekhar Rout - AI Engineer</p>
         <a href={links.email}>mrshibji@gmail.com</a>
       </footer>
     </div>
