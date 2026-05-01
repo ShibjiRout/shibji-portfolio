@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 import {
   ArrowDown,
   ArrowUpRight,
-  Award,
   Brain,
   BriefcaseBusiness,
   CheckCircle2,
@@ -67,82 +66,84 @@ const navItems = [
 ]
 
 const metrics = [
-  { value: '1M+', label: 'records supported' },
+  { value: '6+', label: 'enterprise clients owned' },
   { value: '80%', label: 'review time reduced' },
-  { value: '99.9%', label: 'uptime maintained' },
+  { value: '75%', label: 'P1 incidents reduced' },
   { value: '98%', label: 'pipeline success rate' },
 ]
 
 const stack = [
   'Python',
-  'FastAPI',
   'LangGraph',
+  'LangChain',
+  'LangSmith',
   'RAG',
-  'LLMs',
-  'SQL',
+  'OpenAI',
+  'FastAPI',
   'Azure',
   'Docker',
+  'Qdrant',
   'MongoDB',
   'Redis',
-  'Qdrant',
   'PyTorch',
+  'MCP',
 ]
 
 const capabilities: Capability[] = [
   {
-    title: 'LLM and Agent Systems',
+    title: 'Generative AI & LLMs',
     icon: <Brain size={20} />,
-    summary: 'Production-focused LLM workflows with retrieval, tool use, and evaluation in mind.',
-    items: ['LangGraph', 'LangChain', 'RAG', 'GPT-4o', 'Prompt Engineering', 'Agentic Workflows'],
+    summary: 'Production LLM pipelines with multi-agent orchestration, evaluation, and observability.',
+    items: ['LangGraph', 'LangChain', 'LangSmith', 'OpenAI', 'RAG', 'Prompt Engineering', 'MCP', 'Graph Memory'],
+  },
+  {
+    title: 'Vector Databases & Retrieval',
+    icon: <Database size={20} />,
+    summary: 'Semantic search, hybrid retrieval, and re-ranking for high-precision AI applications.',
+    items: ['Qdrant', 'ChromaDB', 'Azure AI Search', 'Neo4j', 'Embeddings', 'Hybrid Search', 'Re-ranking'],
   },
   {
     title: 'Backend and APIs',
     icon: <Server size={20} />,
-    summary: 'Reliable API surfaces for AI products, async services, and deployment-ready systems.',
-    items: ['FastAPI', 'Flask', 'Python Asyncio', 'REST APIs', 'SQL', 'Service Design'],
+    summary: 'Async-first API services built for production AI workloads and enterprise reliability.',
+    items: ['FastAPI', 'Flask', 'Python Asyncio', 'REST APIs', 'SQL', 'RQ'],
   },
   {
-    title: 'Data and Retrieval',
-    icon: <Database size={20} />,
-    summary: 'Document ingestion, vector search, persistence, and data access for useful AI apps.',
-    items: ['Qdrant', 'ChromaDB', 'MongoDB', 'Redis', 'PostgreSQL', 'Neo4j'],
-  },
-  {
-    title: 'Cloud Delivery',
+    title: 'Cloud & DevOps',
     icon: <Cloud size={20} />,
-    summary: 'Containerized delivery with CI/CD, cloud deployment, and operational discipline.',
-    items: ['Azure Container Apps', 'Azure ACR', 'Docker', 'GitHub Actions', 'CI/CD', 'Monitoring'],
+    summary: 'Azure-native deployment with containers, CI/CD, and application monitoring.',
+    items: ['Azure App Services', 'Azure Video Indexer', 'Azure ACR', 'Docker', 'GitHub Actions', 'App Insights'],
   },
   {
     title: 'ML Engineering',
     icon: <Layers3 size={20} />,
-    summary: 'Classical ML and deep learning experiments with reproducible comparison.',
-    items: ['PyTorch', 'Scikit-Learn', 'XGBoost', 'CatBoost', 'Pandas', 'NumPy'],
+    summary: 'End-to-end ML pipelines with evaluation, benchmarking, and reproducible experiments.',
+    items: ['Scikit-Learn', 'XGBoost', 'CatBoost', 'PyTorch', 'Pandas', 'NumPy', 'RAGAS'],
   },
   {
-    title: 'Production Practice',
+    title: 'Databases & Messaging',
     icon: <ShieldCheck size={20} />,
-    summary: 'Enterprise reliability habits from support ownership and client delivery.',
-    items: ['SLA Ownership', 'Incident Reduction', 'Client Delivery', 'Documentation', 'Release Care'],
+    summary: 'Persistent storage and async messaging layers for scalable AI system architecture.',
+    items: ['MongoDB', 'Redis', 'Upstash', 'PostgreSQL', 'RQ', 'CI/CD'],
   },
 ]
 
 const projects: Project[] = [
   {
     title: 'Brand Guardian AI',
-    category: 'Agentic AI Compliance',
-    problem: 'Marketing and compliance teams need faster, repeatable review of YouTube ads against brand rules.',
-    impact: 'Built a multimodal LangGraph workflow with Azure Video Indexer and GPT-4o, cutting manual review time by roughly 80%.',
-    stack: ['LangGraph', 'Azure Video Indexer', 'GPT-4o', 'FastAPI', 'RAG'],
+    category: 'Multi-modal Compliance Engine',
+    problem: 'Compliance teams need automated, repeatable auditing of video ads against brand rules without manual review.',
+    impact: 'Architected end-to-end LangGraph pipeline with Azure Video Indexer, OCR, speech-to-text and GPT-4o — 98% pipeline success at $0.001–$0.004 per audit.',
+    stack: ['LangGraph', 'Azure Video Indexer', 'Azure AI Search', 'OpenAI', 'FastAPI', 'LangSmith'],
     href: 'https://brandgurdian.azurewebsites.net',
     proof: 'Live deployment',
   },
   {
     title: 'DocLense',
     category: 'Production RAG Platform',
-    problem: 'Teams need trustworthy PDF answers without losing context across long document sessions.',
-    impact: 'Designed Qdrant retrieval, MongoDB history, adaptive GPT-4o escalation, and Azure Container Apps deployment.',
-    stack: ['RAG', 'Qdrant', 'MongoDB', 'Azure', 'FastAPI'],
+    problem: 'Teams need trustworthy PDF answers with context precision, cost efficiency, and async ingestion at scale.',
+    impact: 'Built LangGraph RAG with Qdrant (Context Precision 1.00, Faithfulness 0.93), 15× cost savings via gpt-4o-mini escalation, deployed on Azure Container Apps.',
+    stack: ['LangGraph', 'Qdrant', 'MongoDB', 'Redis', 'FastAPI', 'Docker', 'Azure'],
     href: 'https://doclense-server.victoriousisland-1f528db7.polandcentral.azurecontainerapps.io',
     proof: 'Cloud API',
   },
@@ -158,9 +159,9 @@ const projects: Project[] = [
   {
     title: 'Student Performance Predictor',
     category: 'ML Pipeline and Deployment',
-    problem: 'Education teams need an interpretable way to estimate performance from student profile and behavior data.',
-    impact: 'Benchmarked nine regression models, reached 88.06% R2 with Ridge Regression, and deployed through Docker CI/CD on Azure.',
-    stack: ['Scikit-Learn', 'Docker', 'Azure', 'CI/CD'],
+    problem: 'Education teams need an interpretable way to estimate performance from student profile and socioeconomic data.',
+    impact: 'Benchmarked 9 regression models via GridSearchCV, reached 88.06% R² with Ridge Regression, deployed on Azure with Docker CI/CD.',
+    stack: ['Scikit-Learn', 'XGBoost', 'CatBoost', 'Flask', 'Docker', 'Azure', 'GitHub Actions'],
     href: 'https://shibji-student-per.azurewebsites.net/',
     proof: 'Live app',
   },
@@ -170,14 +171,15 @@ const experience: TimelineEntry[] = [
   {
     title: 'Application Development Analyst',
     org: 'Accenture',
-    period: '2021 - 2023',
-    location: 'India',
+    period: 'Jul 2021 – Jul 2024',
+    location: 'Gurgaon, India',
     icon: <BriefcaseBusiness size={18} />,
     bullets: [
-      'Owned financial application modules processing 1M+ records with zero critical failures across assigned releases.',
-      'Reduced latency by 70% through pipeline tuning, async processing, and production issue analysis.',
-      'Supported 6+ enterprise client relationships while maintaining 99.9% uptime and 97% SLA compliance.',
-      'Reduced P1 incidents by 75% through root-cause fixes, operational documentation, and release discipline.',
+      'Sole technical point of contact for 6+ enterprise clients across finance and tech, independently owning end-to-end delivery and stakeholder communication.',
+      'Led architectural system upgrade from JDE 9.1 to 9.2 by analysing production logs and identifying failure patterns, reducing P1 incidents by 75%.',
+      'Engineered SQL-based data solutions processing 1M+ financial records, powering critical financial workflows and improving data reliability in live systems.',
+      'Led and trained a team of 2 junior analysts on production debugging, JDE log analysis and client communication — driving independent delivery within 3 months.',
+      'Cleared TechLeap AI/ML and Python assessments, securing fast-tracked promotion within first year at Accenture.',
     ],
   },
 ]
@@ -186,37 +188,17 @@ const education: TimelineEntry[] = [
   {
     title: 'MSc Advanced Computer Science',
     org: 'University of Leeds',
-    period: '2023 - 2024',
+    period: 'Sep 2024 – Nov 2025',
     location: 'Leeds, UK',
     icon: <GraduationCap size={18} />,
     bullets: [
-      'Graduated with Merit, focused on machine learning, intelligent systems, distributed systems, and software engineering.',
-      'Completed dissertation on the Lottery Ticket Hypothesis for RNNs with custom optimizer experiments in PyTorch.',
-      'Built stronger research-to-engineering practice through reproducible experiments, model comparison, and reporting.',
+      'Graduated with Merit — modules include Machine Learning, Deep Learning, Cloud Computing, Data Mining, Data Science, and Algorithms.',
+      'Completed dissertation on the Lottery Ticket Hypothesis for RNNs, comparing GD and EG optimizers with iterative magnitude pruning in PyTorch.',
+      'Built research-to-engineering practice through reproducible experiments, model benchmarking, and structured reporting.',
     ],
   },
 ]
 
-const credentials = [
-  {
-    title: 'Production AI Portfolio',
-    issuer: 'Live deployments and source projects',
-    detail: 'Proof across LangGraph, RAG, Azure, Docker, FastAPI, Qdrant, MongoDB, and CI/CD delivery.',
-    href: '#projects',
-  },
-  {
-    title: 'Advanced Computer Science',
-    issuer: 'University of Leeds',
-    detail: 'MSc-level training in machine learning, distributed systems, and software engineering research.',
-    href: links.localResume,
-  },
-  {
-    title: 'Enterprise Delivery Practice',
-    issuer: 'Accenture',
-    detail: 'Production support, SLA ownership, incident reduction, and client-facing application delivery.',
-    href: links.resume,
-  },
-]
 
 const floatTokens = [
   { label: 'RAG', className: 'tokenOne' },
@@ -619,40 +601,12 @@ export default function App() {
         <section className="contentStage" id="education" data-flash={flash('education')}>
           <SectionHeader
             eyebrow="Education"
-            title="Computer science foundation for modern AI engineering."
-            text="Formal advanced computing study paired with research, experiments, and software implementation."
+            title="Advanced Computer Science foundation for modern AI engineering."
+            text="Formal postgraduate study in machine learning, cloud computing, and software engineering research."
           />
           <TimelinePanel entries={education} />
         </section>
 
-        <section className="contentStage" id="certifications" data-flash={flash('certifications')}>
-          <SectionHeader
-            eyebrow="Credentials & Proof"
-            title="Evidence through deployments, education, and delivery."
-            text="This section keeps the claims grounded in verifiable portfolio work, resume links, and academic background."
-          />
-          <div className="credentialGrid">
-            {credentials.map((credential, index) => (
-              <motion.a
-                className="credentialCard"
-                href={credential.href}
-                target={credential.href.startsWith('#') ? undefined : '_blank'}
-                rel={credential.href.startsWith('#') ? undefined : 'noreferrer'}
-                key={credential.title}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: '-80px' }}
-                transition={{ delay: index * 0.05, duration: 0.5 }}
-              >
-                <Award size={21} />
-                <h3>{credential.title}</h3>
-                <span>{credential.issuer}</span>
-                <p>{credential.detail}</p>
-              </motion.a>
-            ))}
-          </div>
-        </section>
 
         <section className="contactStage" id="contact" data-flash={flash('contact')}>
           <div>
