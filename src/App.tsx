@@ -54,7 +54,6 @@ const links = {
   linkedin: 'https://www.linkedin.com/in/shibji-shekhar-rout',
   email: 'mailto:mrshibji@gmail.com',
   resume: 'https://drive.google.com/file/d/13PJiM4I_Z0uALk--Sh5pVnswraHQkq6v/view?usp=sharing',
-  localResume: '/Shibji_Rout.pdf',
 }
 
 const navItems = [
@@ -334,7 +333,7 @@ function HeroStage() {
               View Projects
               <ArrowUpRight size={18} />
             </a>
-            <a className="secondaryButton" href={links.localResume} target="_blank" rel="noreferrer" download>
+            <a className="secondaryButton" href={links.resume} target="_blank" rel="noreferrer">
               <FileText size={18} />
               Download Resume
             </a>
