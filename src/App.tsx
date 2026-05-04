@@ -53,7 +53,7 @@ const links = {
   github: 'https://github.com/ShibjiRout',
   linkedin: 'https://www.linkedin.com/in/shibji-shekhar-rout',
   email: 'mailto:mrshibji@gmail.com',
-  resume: 'https://drive.google.com/file/d/13PJiM4I_Z0uALk--Sh5pVnswraHQkq6v/view?usp=sharing',
+  resume: 'https://drive.google.com/file/d/13DwtwN-T5MA9-D1fMuAvJlTmFxNgiOBA/view?usp=drive_link',
 }
 
 const navItems = [
