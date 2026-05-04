@@ -201,7 +201,7 @@ const education: TimelineEntry[] = [
 
 const floatTokens = [
   { label: 'RAG', className: 'tokenOne' },
-  { label: 'SQL', className: 'tokenTwo' },
+  { label: 'AI', className: 'tokenTwo' },
   { label: 'API', className: 'tokenThree' },
   { label: 'LLM', className: 'tokenFour' },
 ]
