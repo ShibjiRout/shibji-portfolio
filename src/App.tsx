@@ -129,13 +129,22 @@ const capabilities: Capability[] = [
 
 const projects: Project[] = [
   {
+    title: 'Contract Intelligence Platform',
+    category: 'Legal AI Review Workflow',
+    problem: 'Legal teams need faster contract review without losing clause-level rigor, precedent awareness, or approval control.',
+    impact: 'Built an async review platform that combines OCR, structured clause extraction, vector playbook matching, Neo4j precedent lookup, and lawyer-ready recommendations across PDF and DOCX contracts.',
+    stack: ['OpenAI', 'FastAPI', 'Celery', 'Qdrant', 'PostgreSQL', 'Neo4j', 'MongoDB', 'Azure'],
+    href: 'https://contract-intel.netlify.app/',
+    proof: 'Live product demo',
+  },
+  {
     title: 'Brand Guardian AI',
     category: 'Multi-modal Compliance Engine',
     problem: 'Compliance teams need automated, repeatable auditing of video ads against brand rules without manual review.',
     impact: 'Architected end-to-end LangGraph pipeline with Azure Video Indexer, OCR, speech-to-text and GPT-4o — 98% pipeline success at $0.001–$0.004 per audit.',
     stack: ['LangGraph', 'Azure Video Indexer', 'Azure AI Search', 'OpenAI', 'FastAPI', 'LangSmith'],
     href: 'https://brandgurdian.azurewebsites.net',
-    proof: 'Live deployment',
+    proof: 'Live product demo',
   },
   {
     title: 'DocLense',
@@ -144,7 +153,7 @@ const projects: Project[] = [
     impact: 'Built LangGraph RAG with Qdrant (Context Precision 1.00, Faithfulness 0.93), 15× cost savings via gpt-4o-mini escalation, deployed on Azure Container Apps.',
     stack: ['LangGraph', 'Qdrant', 'MongoDB', 'Redis', 'FastAPI', 'Docker', 'Azure'],
     href: 'https://doclense-server.victoriousisland-1f528db7.polandcentral.azurecontainerapps.io',
-    proof: 'Cloud API',
+    proof: 'Live product demo',
   },
   {
     title: 'MSc Research',
