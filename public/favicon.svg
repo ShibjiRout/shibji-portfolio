@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#0a0a0b"/>
+  <rect x="0.5" y="0.5" width="63" height="63" rx="13.5" fill="none" stroke="#2a2a2e"/>
+  <text x="32" y="33" fill="#ececee" font-family="Inter, Segoe UI, system-ui, sans-serif"
+        font-size="30" font-weight="600" text-anchor="middle" dominant-baseline="central">S</text>
+</svg>
